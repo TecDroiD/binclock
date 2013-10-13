@@ -237,10 +237,6 @@ void display_minutes(s_time time) {
 void display_hours(s_time time) {
 	PORT_HOUR &= ~(PORTMASK_HOUR);
 
-	uint8_t hour = (time.hour & 0x05);
-	hour |= ((time.hour & 0x08) >> 2);
-	hour |= ((time.hour & 0x02) << 2);
-
 	PORT_HOUR |= (PORTMASK_HOUR & (hour << 4));
 }
 
