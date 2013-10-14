@@ -16,17 +16,19 @@ while getopts ":c:P:r:h" opt; do
 		P) PORT=$OPTARG
 			echo "choosing port $PORT"
 			;;
-		r) if [ $OPTARG = 'a' ]
+		r) shopt -s nocasematch 
+		   if [ $OPTARG = 'a' ]
 				then REVISION=a
 				else REVISION=b
 		   fi
+		   shopt -n nocasematch
 		   ;;	 
 		h) echo "program.sh [OPTIONS]"
 		   echo "  OPTIONS "
-		   echo "  c [programmer] - avr programmer. Standard is dragon_isp."
-		   echo "  P [port]       - programming port. Standard is usb."
-		   echo "  r [revision]   - revision A or B. Standard is a."
-		   echo ""
+		   echo "  -h              - shows this help."
+		   echo "  -c [programmer] - avr programmer. Standard is dragon_isp."
+		   echo "  -P [port]       - programming port. Standard is usb."
+		   echo "  -r [revision]   - revision A or B. Standard is a."
 		   exit 0
 		   ;;   
 		\?) echo "Unknown Argument $OPT"
