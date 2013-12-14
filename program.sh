@@ -42,5 +42,5 @@ while getopts ":c:P:r:h" opt; do
 			
 done
 
-avrdude	 -pm8 -c$PROGRAMMER -P$PORT -b1200 -B500 -i50 -u -Uflash:w:bin/revision-$REVISION.hex:a -Ulfuse:w:0xc9:m -Uhfuse:w:0xd9:m
+avrdude	 -pm8 -c$PROGRAMMER -P$PORT -b1200 -B50 -i50 -u -Uflash:w:bin/revision-$REVISION.hex:a -Ulfuse:w:0xc9:m -Uhfuse:w:0xd9:m
 
