@@ -1,6 +1,0 @@
-#!/bin/bash
-avrdude	-pm8 -cdragon_isp -Pusb -b9600 -B5 -i5 -u 
-			-Uflash:w:binclock.hex:a
-			-Ulfuse:w:0xc9:m
-			-Uhfuse:w:0xde:m
-
